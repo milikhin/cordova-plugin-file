@@ -477,7 +477,7 @@ void File::readEntries(int scId, int ecId, const QString &uri) {
         return;
     }
 
-    for (const QFileInfo &fileInfo: dir.entryInfoList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot)) {
+    for (const QFileInfo &fileInfo: dir.entryInfoList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot | QDir::Hidden)) {
         entriesList += CordovaInternal::format(file2map(fileInfo)) + ",";
     }
     // Remove trailing comma
